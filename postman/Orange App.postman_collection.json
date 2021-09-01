@@ -67,7 +67,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"davlop@hotmail.co\",\r\n    \"password\": \"Password13]\"\r\n}",
+							"raw": "{\r\n    \"email\": \"davlop@hotmail.com\",\r\n    \"password\": \"Password13]\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -135,13 +135,13 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2ODIzNiwiZXhwIjoxNjMwNDY5NDM2fQ.gFkQnaOuK3MZUl-crpfzezLGoFB8uZHcl0j2QHSPoqE",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmZjOGRhMjc2YjJjNTM2NjU2YWJkNiIsImlhdCI6MTYzMDUyNDkwMywiZXhwIjoxNjMwNTI2MTAzfQ.E1BS3CKMLELKX3geYlN-NpOJBBM13LSrr3RA1zMkCl4",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Cheese Ice Cream 6\",\r\n    \"description\": \"Delicious chocolate cake wiht strawberries\",\r\n    \"price\": 15000,\r\n    \"isPrivate\": false\r\n}",
+							"raw": "{\r\n    \"name\": \"Ice Cream 10\",\r\n    \"description\": \"Delicious chocolate cake wiht strawberries\",\r\n    \"price\": 15000,\r\n    \"isPrivate\": false\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -174,12 +174,12 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQwNTE1NCwiZXhwIjoxNjMwNDA2MzU0fQ.iO9WvqONkrsxsw0dDJNxukeyIlZE_6a1f7uEP7RgTqs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmZjOGRhMjc2YjJjNTM2NjU2YWJkNiIsImlhdCI6MTYzMDUyNDkwMywiZXhwIjoxNjMwNTI2MTAzfQ.E1BS3CKMLELKX3geYlN-NpOJBBM13LSrr3RA1zMkCl4",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products",
+							"raw": "http://localhost:3000/products?page=1&limit=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -187,6 +187,16 @@
 							"port": "3000",
 							"path": [
 								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -204,12 +214,12 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ3MDg5NiwiZXhwIjoxNjMwNDcyMDk2fQ.-eXF1VgCEcyIEdgg6rc8aBqO95LcEm8T520RyGSEz_Q",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmZjOGRhMjc2YjJjNTM2NjU2YWJkNiIsImlhdCI6MTYzMDUyNDkwMywiZXhwIjoxNjMwNTI2MTAzfQ.E1BS3CKMLELKX3geYlN-NpOJBBM13LSrr3RA1zMkCl4",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/:userId",
+							"raw": "http://localhost:3000/products/:userId?page=1&limit=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -219,10 +229,20 @@
 								"products",
 								":userId"
 							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							],
 							"variable": [
 								{
 									"key": "userId",
-									"value": "612df2512ebf2af626ddc1a0"
+									"value": "612fc8da276b2c536656abd6"
 								}
 							]
 						}
@@ -371,7 +391,7 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2OTc3MywiZXhwIjoxNjMwNDcwOTczfQ.8e0yRhd7bVYIi2KJwZAo-LL_SKZbQcHQLw6d0NfVgQw",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmZjOGRhMjc2YjJjNTM2NjU2YWJkNiIsImlhdCI6MTYzMDUyMTYxMSwiZXhwIjoxNjMwNTIyODExfQ.BDmvFSRUstQ5VIXi-lmcsRXogF2XWec7FEJBGU-JTdY",
 								"type": "text"
 							}
 						],
@@ -408,12 +428,12 @@
 							},
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ3MDU4NSwiZXhwIjoxNjMwNDcxNzg1fQ.fBrR1ozv_VlA1AbIN1LCMJ4dAuGcBK7k0coay34azoY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmZjOGRhMjc2YjJjNTM2NjU2YWJkNiIsImlhdCI6MTYzMDUyMTYxMSwiZXhwIjoxNjMwNTIyODExfQ.BDmvFSRUstQ5VIXi-lmcsRXogF2XWec7FEJBGU-JTdY",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/products/likes",
+							"raw": "http://localhost:3000/products/likes?page=1&limit=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -422,6 +442,16 @@
 							"path": [
 								"products",
 								"likes"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},
@@ -438,7 +468,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/bonus",
+							"raw": "http://localhost:3000/bonus?page=1&limit=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -446,6 +476,16 @@
 							"port": "3000",
 							"path": [
 								"bonus"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
 							]
 						}
 					},

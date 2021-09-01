@@ -5,7 +5,7 @@ export const bonus = async (req, res) => {
     // Fetch data from a url endpoint
     const response = await axios({
       method: 'get',
-      url: 'https://pokeapi.co/api/v2/pokemon?offset=00&limit=20'
+      url: 'https://pokeapi.co/api/v2/pokemon'
     })
     // Data validation
     response.data !== []

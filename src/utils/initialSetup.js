@@ -5,6 +5,7 @@ import User from '../models/User.js'
 // Create predefined info when starting the application
 export const initialSetup = async () => {
   try {
+    // Create predefined roles
     const rolesCount = await Role.estimatedDocumentCount()
     if (rolesCount === 0) {
       await Promise.all([
@@ -13,6 +14,7 @@ export const initialSetup = async () => {
       ])
     }
 
+    // Create predefined users
     const usersCount = await User.estimatedDocumentCount()
     if (usersCount === 0) {
       const newUser = new User({
@@ -35,7 +37,7 @@ export const initialSetup = async () => {
 
       await newUser2.save()
     }
-
+    // Create predefined products
     const productsCount = await Product.estimatedDocumentCount()
     if (productsCount === 0) {
       const newProduct = new Product({

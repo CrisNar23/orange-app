@@ -37,14 +37,24 @@ export const createProduct = async (req, res) => {
 
 // Function to read only public products
 export const readPublicProducts = async (req, res) => {
+  const { page = 1, limit = 10 } = req.query
   try {
-    const products = await Product.find({ isPrivate: { $eq: false } }).populate(
-      {
+    const products = await Product.find({ isPrivate: { $eq: false } })
+      .populate({
         path: 'createdBy',
         select: 'username'
-      }
-    )
-    res.status(200).json(products)
+      })
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .exec()
+
+    const count = await Product.estimatedDocumentCount()
+
+    res.status(200).json({
+      products,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page
+    })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Internal server error' })
@@ -55,6 +65,8 @@ export const readPublicProducts = async (req, res) => {
 export const readOwnProducts = async (req, res) => {
   const { userId } = req.params
   const userReq = req.userId
+  const { page = 1, limit = 10 } = req.query
+
   try {
     if (userId !== userReq) {
       return res.status(403).json({
@@ -63,11 +75,22 @@ export const readOwnProducts = async (req, res) => {
     }
     const products = await Product.find({
       createdBy: { $eq: userId }
-    }).populate({
-      path: 'createdBy',
-      select: 'username'
     })
-    res.status(200).json(products)
+      .populate({
+        path: 'createdBy',
+        select: 'username'
+      })
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .exec()
+
+    const count = await Product.estimatedDocumentCount()
+
+    res.status(200).json({
+      products,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page
+    })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Internal server error' })
@@ -171,12 +194,24 @@ export const likeToPublicProducts = async (req, res) => {
 
 // Function to get a list of public products with likes
 export const listOfLikes = async (req, res) => {
+  const { page = 1, limit = 10 } = req.query
   try {
-    const products = await Product.find({ likes: { $gt: 0 } }).populate({
-      path: 'createdBy',
-      select: 'username'
+    const products = await Product.find({ likes: { $gt: 0 } })
+      .populate({
+        path: 'createdBy',
+        select: 'username'
+      })
+      .limit(limit * 1)
+      .skip((page - 1) * limit)
+      .exec()
+
+    const count = await Product.estimatedDocumentCount()
+
+    res.status(200).json({
+      products,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page
     })
-    res.status(200).json(products)
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Internal server error' })
