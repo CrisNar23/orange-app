@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "2d81ca06-776e-4cce-9014-9ae1ab613e11",
+		"name": "Orange App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmQ5NDU0ZjcyNTFlYTZkMmIwYTQ2YSIsImlhdCI6MTYzMDM3NzE4OSwiZXhwIjoxNjMwMzg0Mzg5fQ.xGKT-vIc1oanM100ytqWQgNpKYdVDgT1gcr72GlzS8g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRiZGZlNzY2NDJhMGUwN2RjMGIwZSIsImlhdCI6MTYzMDM5MzU3OSwiZXhwIjoxNjMwMzk0Nzc5fQ.htqvS3PnB7h_Kz2sSfvjdrSKo3fb_pBKAEHSWBpiADY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Camilo\",\r\n    \"email\": \"camilo@hotmail\",\r\n    \"roles\": [\"standard\", \"admin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"davlop@hotmail.co\",\r\n    \"password\": \"Password13]\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"DavLop\",\r\n    \"email\": \"davlop@hotmail.co\",\r\n    \"password\": \"Password13]\",\r\n    \"roles\": [\"admin\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signUp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2ODIzNiwiZXhwIjoxNjMwNDY5NDM2fQ.gFkQnaOuK3MZUl-crpfzezLGoFB8uZHcl0j2QHSPoqE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cheese Ice Cream 6\",\r\n    \"description\": \"Delicious chocolate cake wiht strawberries\",\r\n    \"price\": 15000,\r\n    \"isPrivate\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readPublicProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQwNTE1NCwiZXhwIjoxNjMwNDA2MzU0fQ.iO9WvqONkrsxsw0dDJNxukeyIlZE_6a1f7uEP7RgTqs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readOwnProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ3MDg5NiwiZXhwIjoxNjMwNDcyMDk2fQ.-eXF1VgCEcyIEdgg6rc8aBqO95LcEm8T520RyGSEz_Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "612df2512ebf2af626ddc1a0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editPrivateProducts",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQwNTE1NCwiZXhwIjoxNjMwNDA2MzU0fQ.iO9WvqONkrsxsw0dDJNxukeyIlZE_6a1f7uEP7RgTqs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cheese Ice Cream 3\",\r\n    \"description\": \"Delicious chocolate cake wiht strawberries\",\r\n    \"price\": 15000,\r\n    \"isPrivate\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/:userId/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								":userId",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "612df2512ebf2af626ddc1a0"
+								},
+								{
+									"key": "productId",
+									"value": "612df56ae23a0e798d5fdc72"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePrivateProductsById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2MzE4NSwiZXhwIjoxNjMwNDY0Mzg1fQ.RYr8KN53TzYxoKCd4mil46dr3xT-lAxrnMAoUco72Jo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/:userId/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								":userId",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "612df2512ebf2af626ddc1a0"
+								},
+								{
+									"key": "productId",
+									"value": "612dee86254dbe433d732ef4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllPrivateProducts",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2MzE4NSwiZXhwIjoxNjMwNDY0Mzg1fQ.RYr8KN53TzYxoKCd4mil46dr3xT-lAxrnMAoUco72Jo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likeToPublicProducts",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ2OTc3MywiZXhwIjoxNjMwNDcwOTczfQ.8e0yRhd7bVYIi2KJwZAo-LL_SKZbQcHQLw6d0NfVgQw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "612ef9a3e9140b76dfa20a95"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listOfLikes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMmRmMjUxMmViZjJhZjYyNmRkYzFhMCIsImlhdCI6MTYzMDQ3MDU4NSwiZXhwIjoxNjMwNDcxNzg1fQ.fBrR1ozv_VlA1AbIN1LCMJ4dAuGcBK7k0coay34azoY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/products/likes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
