@@ -428,6 +428,20 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Bonus",
+			"item": [
+				{
+					"name": "bonus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
