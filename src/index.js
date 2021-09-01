@@ -7,6 +7,7 @@ import { initialSetup } from './utils/initialSetup.js'
 import authRoutes from './routes/auth.routes.js'
 import userRoutes from './routes/user.routes.js'
 import productRoutes from './routes/product.routes.js'
+import bonusRoutes from './routes/bonus.routes.js'
 
 // Create a new express server
 const app = express()
@@ -31,6 +32,9 @@ app.use('/users', userRoutes)
 
 // Main route to manage products
 app.use('/products', productRoutes)
+
+// Main route to manage bonus
+app.use('/bonus', bonusRoutes)
 
 // Listening requests into defined port
 app.listen(process.env.PORT, () =>
